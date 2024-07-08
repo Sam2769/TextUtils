@@ -6,6 +6,10 @@ import Alert from "./components/Alert";
 import { useState } from "react";
 // import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
+/* COMMENT ADDED ****************************  */
+
+/* I love to use React JS to make the frontend part of my projects */
+
 function App() {
   const [mode, setMode] = useState("light");
   const [modeText, setModeText] = useState("Dark");
