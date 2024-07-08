@@ -11,7 +11,7 @@ export default function NavBar(props) {
             className={`navbar-brand text-${
               props.mode === "light" ? "dark" : "light"
             }`}
-            href="/"
+            href="#"
           >
             {props.title}
           </a>
@@ -34,7 +34,7 @@ export default function NavBar(props) {
                     props.mode === "light" ? "dark" : "light"
                   }`}
                   aria-current="page"
-                  href="/"
+                  href="#"
                 >
                   Home
                 </a>
@@ -44,7 +44,7 @@ export default function NavBar(props) {
                   className={`nav-link text-${
                     props.mode === "light" ? "dark" : "light"
                   }`}
-                  href="/about"
+                  href="#"
                 >
                   {props.aboutText}
                 </a>
