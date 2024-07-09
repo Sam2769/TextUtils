@@ -1,14 +1,10 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-// import About from "./components/About";
+import About from "./components/About";
 import Form from "./components/Form";
 import Alert from "./components/Alert";
 import { useState } from "react";
-// import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
-/* COMMENT ADDED ****************************  */
-
-/* I love to use React JS to make the frontend part of my projects */
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -61,33 +57,37 @@ function App() {
 
   return (
     <>
-      {/*<Router>*/}
-      <NavBar
-        title="Text Utils"
-        modeText={modeText}
-        aboutText="About"
-        mode={mode}
-        toggleMode={toggleMode}
-        green={enableGreenMode}
-        maroon={enableMaroonMode}
-        grey={enableGreyMode}
-      />
-      <Alert alert={alert} />
-      <div className="container my-3">
-        {/* <Routes>
+      <Router>
+        <NavBar
+          title="Text Utils"
+          modeText={modeText}
+          aboutText="About"
+          mode={mode}
+          toggleMode={toggleMode}
+          green={enableGreenMode}
+          maroon={enableMaroonMode}
+          grey={enableGreyMode}
+        />
+        <Alert alert={alert} />
+
+        <div className="container my-3">
+          <Routes>
             <Route
               exact
               path="/"
-              element={ */}
-        <Form heading="Enter the Text" mode={mode} showAlert={showAlert} />
-        {/* }
+              element={
+                <Form
+                  heading="Try TextUtils - Word Counter , Character Counter, Case Converter"
+                  mode={mode}
+                  showAlert={showAlert}
+                />
+              }
             />
 
-            <Route path="/about" element={<About />} />
-          </Routes> */}
-
-        {/* </Router> */}
-      </div>
+            <Route path="/about" element={<About mode={mode} />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
