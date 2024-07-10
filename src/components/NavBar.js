@@ -64,11 +64,17 @@ export default function NavBar(props) {
                 Search
               </button>
             </form> */}
-            <span className="palette-1 dot" onClick={props.maroon}></span>
+            <span
+              className="palette-1 dot"
+              onClick={props.toggleMaroonMode}
+            ></span>
             {/*RED BUTTON*/}
-            <span className="palette-2 dot" onClick={props.green}></span>
+            <span
+              className="palette-2 dot"
+              onClick={props.toggleGreenMode}
+            ></span>
             {/* GREEN BUTTON*/}
-            <span className="palette-3 dot" onClick={props.grey}></span>
+            <span className="palette-3 dot"></span>
             {/*GREY BUTTON */}
             <div className="form-check form-switch">
               <input

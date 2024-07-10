@@ -22,6 +22,53 @@ function App() {
     }, 1500);
   };
 
+  const toggleMaroonMode = () => {
+    // light to maroon
+    if (mode === "light") {
+      setMode("danger");
+      document.body.style.backgroundColor = "#5c1c22";
+      showAlert("Maroon Mode has been Enabled", "success");
+    } /* maroon to light */ else if (modeText === "Dark" && mode === "danger") {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light Mode has been Enabled", "success");
+    } /*maroon to dark*/ else if (modeText === "Light" && mode === "danger") {
+      setMode("dark");
+      document.body.style.backgroundColor = "rgb(16, 15, 32)";
+      showAlert("Dark Mode has been Enabled", "success");
+    }
+    // dark to maroon
+    else {
+      setMode("danger");
+      document.body.style.backgroundcolor = "rgb(143,62,62)";
+      showAlert("Maroon Mode has been Enabled", "success");
+    }
+  };
+
+  const toggleGreenMode = () => {
+    // light to green
+    if (mode === "light" || mode === "dark") {
+      setMode("success");
+      document.body.style.backgroundColor = "green";
+      showAlert("Green Mode has been Enabled", "success");
+    }
+
+    // green to light
+    else if (modeText === "Dark" && mode === "success") {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light Mode has been Enabled", "success");
+    }
+    // green to dark
+    else if (modeText === "Light" && mode === "success") {
+      setMode("dark");
+      document.body.style.backgroundColor = "";
+      showAlert("Dark Mode has been Enabled", "success");
+    }
+  };
+
+
+
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
@@ -36,37 +83,36 @@ function App() {
     }
   };
 
-  const enableGreenMode = () => {
-    setMode("success");
-    document.body.style.backgroundColor = "rgb(5, 33, 5)";
-    showAlert("Green Mode has been Enabled", "success");
-    // HAVE TO CHANGE TEXT TO wHITE
-  };
+  // const enableGreenMode = () => {
+  //   setMode("success");
+  //   document.body.style.backgroundColor = "rgb(5, 33, 5)";
+  //   showAlert("Green Mode has been Enabled", "success");
+  //   // HAVE TO CHANGE TEXT TO wHITE
+  // };
 
-  const enableMaroonMode = () => {
-    setMode("danger");
-    document.body.style.backgroundColor = "maroon";
-    showAlert("Maroon Mode has been Enabled", "success");
-  };
+  // const enableMaroonMode = () => {
+  //   setMode("danger");
+  //   document.body.style.backgroundColor = "maroon";
+  //   showAlert("Maroon Mode has been Enabled", "success");
+  // };
 
-  const enableGreyMode = () => {
-    setMode("secondary");
-    document.body.style.backgroundColor = "grey";
-    showAlert("Grey Mode has been Enabled", "success");
-  };
+  // const enableGreyMode = () => {
+  //   setMode("secondary");
+  //   document.body.style.backgroundColor = "grey";
+  //   showAlert("Grey Mode has been Enabled", "success");
+  // };
 
   return (
     <>
       <Router>
         <NavBar
-          title="Text Utils"
+          title="TextUtils"
           modeText={modeText}
           aboutText="About"
           mode={mode}
           toggleMode={toggleMode}
-          green={enableGreenMode}
-          maroon={enableMaroonMode}
-          grey={enableGreyMode}
+          toggleGreenMode={toggleGreenMode}
+          toggleMaroonMode={toggleMaroonMode}
         />
         <Alert alert={alert} />
 

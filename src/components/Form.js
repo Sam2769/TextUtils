@@ -102,6 +102,7 @@ export default function Form(props) {
 
         <button
           id="Button1"
+          disabled={text.length === 0}
           className={`btn btn-primary mx-3 my-1`}
           onClick={handleUpperCase}
         >
@@ -109,6 +110,7 @@ export default function Form(props) {
         </button>
         <button
           id="Button2"
+          disabled={text.length === 0}
           className="btn btn-primary mx-3 my-1"
           onClick={handleLowerCase}
         >
@@ -117,6 +119,7 @@ export default function Form(props) {
 
         <button
           id="Button3"
+          disabled={text.length === 0}
           className="btn btn-primary mx-3 my-1"
           onClick={Clearwindow}
         >
@@ -125,6 +128,7 @@ export default function Form(props) {
 
         <button
           id="Button4"
+          disabled={text.length === 0}
           className="btn btn-primary mx-3 my-1"
           onClick={handleInverse}
         >
@@ -133,6 +137,7 @@ export default function Form(props) {
 
         <button
           id="Button5"
+          disabled={text.length === 0}
           className="btn btn-primary mx-3 my-1"
           onClick={handleCopy}
         >
