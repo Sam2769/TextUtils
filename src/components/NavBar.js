@@ -74,7 +74,7 @@ export default function NavBar(props) {
               onClick={props.toggleGreenMode}
             ></span>
             {/* GREEN BUTTON*/}
-            <span className="palette-3 dot"></span>
+            <span className="palette-3 dot"onClick = {props.toggleGreyMode} ></span>
             {/*GREY BUTTON */}
             <div className="form-check form-switch">
               <input

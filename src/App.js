@@ -67,7 +67,28 @@ function App() {
     }
   };
 
+  const toggleGreyMode = () => {
+    // light to grey || dark to grey
+    if (mode === "light" || mode === "dark") {
+      setMode("secondary");
+      document.body.style.backgroundColor = "grey";
+      showAlert("Grey Mode has been Enabled", "success");
+    }
 
+    // grey to light
+    else if (mode === "grey" && modeText === "Dark") {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light Mode has been Enabled", "success");
+    }
+
+    // grey to dark
+    else if (mode === "grey" && modeText === "Light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "";
+      showAlert("Dark Mode has been Enabled", "success");
+    }
+  };
 
   const toggleMode = () => {
     if (mode === "light") {
@@ -113,6 +134,7 @@ function App() {
           toggleMode={toggleMode}
           toggleGreenMode={toggleGreenMode}
           toggleMaroonMode={toggleMaroonMode}
+          toggleGreyMode={toggleGreyMode}
         />
         <Alert alert={alert} />
 
